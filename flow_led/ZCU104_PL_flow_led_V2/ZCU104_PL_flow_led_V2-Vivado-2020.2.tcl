@@ -25,6 +25,7 @@
 #
 #    "./flow_led.v"
 #    "./flow_led.xdc"
+#    "D:/Software/Xilinx/Vivado/2020.2/data/boards/board_files"
 #
 # 3. The following remote source files that were added to the original project:-
 #
@@ -134,7 +135,7 @@ set proj_dir [get_property directory [current_project]]
 
 # Set project properties
 set obj [current_project]
-set_property -name "board_part_repo_paths" -value "[file normalize "$origin_dir/../../../../../Software/Xilinx/Vivado/2020.2/data/boards/board_files"]" -objects $obj
+set_property -name "board_part_repo_paths" -value "[file normalize "D:/Software/Xilinx/Vivado/2020.2/data/boards/board_files"]" -objects $obj
 set_property -name "board_part" -value "xilinx.com:zcu104:part0:1.1" -objects $obj
 set_property -name "default_lib" -value "xil_defaultlib" -objects $obj
 set_property -name "enable_vhdl_2008" -value "1" -objects $obj
@@ -163,7 +164,7 @@ if {[string equal [get_filesets -quiet sources_1] ""]} {
 set obj [get_filesets sources_1]
 # Import local files from the original project
 set files [list \
- [file normalize "${origin_dir}/../../../FPGA_backup/flow_led/ZCU104_PL_flow_led_V2/ZCU104_PL_flow_led_V2.srcs/sources_1/imports/ZCU106_PL_flow_led_V2/flow_led.v"]\
+ [file normalize "./flow_led.v"]\
 ]
 set imported_files [import_files -fileset sources_1 $files]
 
@@ -186,9 +187,9 @@ if {[string equal [get_filesets -quiet constrs_1] ""]} {
 set obj [get_filesets constrs_1]
 
 # Add/Import constrs file and set constrs file properties
-set file "[file normalize ${origin_dir}/../../../FPGA_backup/flow_led/ZCU104_PL_flow_led_V2/ZCU104_PL_flow_led_V2.srcs/constrs_1/imports/ZCU104_PL_flow_led/flow_led.xdc]"
+set file "[file normalize ./flow_led.xdc]"
 set file_imported [import_files -fileset constrs_1 [list $file]]
-set file "ZCU104_PL_flow_led/flow_led.xdc"
+set file "ZCU104_PL_flow_led_V2/flow_led.xdc"
 set file_obj [get_files -of_objects [get_filesets constrs_1] [list "*$file"]]
 set_property -name "file_type" -value "XDC" -objects $file_obj
 
@@ -220,7 +221,7 @@ set obj [get_filesets utils_1]
 
 # Adding sources referenced in BDs, if not already added
 if { [get_files flow_led.v] == "" } {
-  import_files -quiet -fileset sources_1 D:/Workspace/github/FPGA_backup/flow_led/ZCU104_PL_flow_led_V2/ZCU104_PL_flow_led_V2.srcs/sources_1/imports/ZCU106_PL_flow_led_V2/flow_led.v
+  import_files -quiet -fileset sources_1 ./flow_led.v
 }
 
 
