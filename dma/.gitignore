@@ -1,0 +1,16 @@
+# Ignore everything
+*
+
+
+# But not these files...
+!.gitignore
+!dma_loopback/dma_loopback.png
+!dma_loopback/dma_loopback.tcl
+# file from https://ax7010-20231-v101.readthedocs.io/zh-cn/latest/7010_S2_RSTdocument_CN/15_DMA%E7%8E%AF%E9%80%9A%E6%B5%8B%E8%AF%95_CN.html
+!dma_loopback/vitis/dma_loop/src/dma_intr.c
+# file from zdyz  
+!dma_loopback/vitis/dma_loop/src/dma_loop.c
+
+
+# ...even if they are in subdirectories
+!*/

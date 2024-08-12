@@ -1,0 +1,13 @@
+# Ignore everything
+*
+
+
+# But not these files...
+!.gitignore
+!Readme.md
+!ZCU104_pnyq_DMA/ZCU104_pnyq_DMA-Vivado-2020.2.tcl
+!ZCU104_pnyq_DMA/pynq/
+
+
+# ...even if they are in subdirectories
+!*/

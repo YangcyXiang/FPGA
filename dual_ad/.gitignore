@@ -1,0 +1,14 @@
+# Ignore everything
+*
+
+
+# But not these files...
+!.gitignore
+!Readme.md
+!ZYNQ7020_dual_ad/ZYNQ7020_dual_ad.tcl
+!ZYNQ7020_dual_ad/ZYNQ7020_dual_ad.srcs/sources_1/new/dual_ad.v
+!ZYNQ7020_dual_ad/ZYNQ7020_dual_ad.srcs/constrs_1/new/dual_ad.xdc
+
+
+# ...even if they are in subdirectories
+!*/
